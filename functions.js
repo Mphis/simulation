@@ -1,20 +1,21 @@
 var arr = [];
 var next_node;
-    var arr1 = [];
+var arr1 = [];
+var g = new Graph();
 
 
 makeGraph = function() {
 //after taking user i/p as .. count=num of nodes , edges and their weights and the source edge .. we get here
-      var count = document.getElementById("count").value;
-      var src_node = document.getElementById("source").value;
-console.log(src_node);
-     console.log(count);
-var myTableDiv = document.getElementById("myTable");
-//creating 2D array 
-//this 2D array is for the edges info .. in order to draw graph from it ... 
-for (var i=0;i<count;i++) {
- arr[i] = [];
-}
+   var count = document.getElementById("count").value;
+   var src_node = document.getElementById("source").value;
+   console.log(src_node);
+   console.log(count);
+    var myTableDiv = document.getElementById("myTable");
+    //creating 2D array 
+    //this 2D array is for the edges info .. in order to draw graph from it ... 
+    for (var i=0;i<count;i++) {
+     arr[i] = [];
+    }
 
 var m,n,k;
 //populating it with stuff from the mytablediv
@@ -54,7 +55,7 @@ var weight ;
                             console.log(node1+" "+node2+" "+weight);
                             //just remove the second one for a uni driectional thingy
                             arr[node1][node2]=weight ; 
-                            arr[node2][node1]=weight ; 
+                            //arr[node2][node1]=weight ; 
 
 }
                 }
@@ -138,19 +139,15 @@ while(div.firstChild){
 
 
 var g = new Graph();
-     for(var i=0;i<count;i++)
+
+ for(var i=0;i<count;i++)
  {
   for(var j=0;j<count;j++)
   {
     if(arr[i][j]!=100&&i!=j)
     {
-           g.addEdge(i,j,{ label: arr[i][j] },{
-style: {
-stroke: 'red',
-fill: '#56f',  
-}
-});
-}
+                          g.addEdge(i,j,{ label: arr[i][j] },{fill: 'white' } );
+    }
   }
  }   
             /* layout the graph using the Spring layout implementation */
@@ -188,7 +185,7 @@ console.log("wasup ?");
 //       also the values of i & j will be displayed .. 
 algorithm.innerHTML += '<p>The algo is displayed here </p>' ; 
 algorithm.innerHTML += '<p>end of algorithm </p>';
-dijTable.innerHTML += '<p><b>Current List ...</b></p>';
+//dijTable.innerHTML += '<p><b>Current List ...</b></p>';
 
 var x = document.createElement("TABLE");
 x.border='1';
@@ -216,19 +213,18 @@ document.getElementById("myTr1").appendChild(z);
 dijTable.appendChild(x);
 
 
-
-
+    
 var status = [] ; 
  for(var x = 0;x<count;x++)
     status[x]=0;
 
-for(var x = 0;x<count;x++)
-    console.log("what us lfie"+status[x]);
+//for(var x = 0;x<count;x++)
+//   console.log("what us lfie"+status[x]);
 
 
   for(var x = 0;x<count;x++)
     {
-      console.log("calling");
+     // console.log("calling");
           addDijTuples(status);
 
    //document.getElementById("algo").innerHTML +="The current node processed (i) is : " + x;
@@ -269,6 +265,15 @@ var c=0;
         arr1[c]=arr[src_node][i-1];
         c++;
        row.insertCell(i).innerHTML= arr[src_node][i-1];
+        if(arr[src_node][i-1]!=100)
+           {
+           	 g.addEdge(src_node,i-1,{ label: arr[src_node][i-1] },{
+  style: {
+    stroke: 'red',
+    fill: 'red',  
+  }
+});
+           }
      }
     }
       
@@ -308,8 +313,6 @@ for(var m=0;m<count;m++){
                 if(arr1[m]<next_val&&status[m]==0)
                   next_val=arr1[m];
               }
-console.log("fuck"+next_val);
-
 
                console.log(next_val);
                for(var m=0;m<count;m++){
