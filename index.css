@@ -1,0 +1,111 @@
+.center {
+    margin: auto;
+}
+
+.main {
+    width: 1000px;
+    height: 600px;
+    background-color: #3399ff;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+
+
+
+
+.header{
+    margin-top: 70px; 
+    width: 1000px;
+    padding: 14px;
+    background-color: solid  #3399ff;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #3399ff;
+    overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color:  #000;
+  text-decoration: none;
+  font-size: 17px;
+  width: 19.5%; /* Four links of equal widths */
+  text-align: center;
+  background-color: #b3d9ff;
+}
+
+.navbar a:hover {
+  background-color: whitesmoke;
+}
+
+.navbar a.active {
+  background-color:white;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+input[type=text] {
+  width: 75px;
+  height: 40px;
+  margin: 5px 0 22px 0;
+  padding: 5px;
+  display: inline-block;
+  border: solid #3399ff;
+  background: white;
+}
+
+
+input[type=button]  {
+  margin-left: 10px;
+}
+
+
+.sim{
+    height: 350px;
+    padding: 10px;
+}
+
+.algo{
+    background-color: #004080;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.consl{
+    background-color: #004080;
+    margin-bottom: 20px;
+    height: 200px;
+    padding: 10px;
+}
+
+.highl {
+  width: 300px;
+  height: 100px;
+  background-color: coral;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  margin-bottom: 10px;
+}
+.unhighl {
+  width: 300px;
+  height: 100px;
+  background-color: white;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  margin-bottom: 10px;
+}

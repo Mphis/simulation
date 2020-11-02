@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="text/javascript" src="selection.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.js"> </script> 
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<!-- Link to stylesheet -->
+<link rel="stylesheet" type="text/css" href="index.css">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Selection Sort</title>
+</head>
+
+
+
+
+<body>
+    <div class="container center header">
+        <!-- Header -->
+        <div class="row">
+            <div class="navbar">
+                <a class="active" href="#"><i class="fa fa-fw fa-home"></i>Selection</a> 
+                <a href="#"><i class="fa fa-fw fa-search"></i>Insertion</a> 
+                <a href="#"><i class="fa fa-fw fa-envelope"></i>MinMax</a> 
+                <a href="#"><i class="fa fa-fw fa-user"></i>MergeSort</a>
+                <a href="#"><i class="fa fa-fw fa-user"></i>QuickSort</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="center main">
+        <!-- Console -->
+        <div class="row consl">
+            <div class="maintop" id ="console">
+                <div id="enterval">
+                    <input type="text" name="number" placeholder=" " id="val" value="">
+                    <input type="button" class="btn btn-outline-light" value="Enter values" onclick="enter()"></button> 
+                </div>
+                <div id="number1"></div>
+                <button class="btn btn-outline-light" onclick="reset()">Reset</button>
+            </div>
+        </div>
+
+        <!-- Simulation and Algo -->
+        <div class="row">
+            <div class="col-sm-8 sim"> Simulation 
+                <div id="sim"></div>
+            </div>
+            <div class="col-sm-4 algo"> Algorithms 
+                <div id="line1">
+                    <p2 id ="l1"></p2> <br>
+                    <p2 id ="l12"></p2>
+                </div>
+                
+                
+                <div id="line2">
+                    <p2 id ="l2"></p2> <br>
+                    <p2 id ="l21"> </p2> <br>
+                    <p2 id ="l22"> </p2>
+                </div>
+
+            </div>
+                
+        </div>
+    </div>
+</body>
+
+
+
+
+<script type="text/javascript">
+    //Function for getting input
+    function enter(){
+        value = document.getElementById("val").value;
+        for (var i = 0; i < value; i++) {
+            document.getElementById("number1").innerHTML +='<input type="text" name="number5" placeholder=" " id="idn"+i value="">' ;  
+            console.log(i) ;         
+        }
+        document.getElementById("number1").innerHTML +='<input type="button" class="btn btn-outline-light" name="number" onclick="ssb()" value="Start Simulation">' ;
+        document.getElementById("enterval").style.display = "none";
+    }
+
+    function ssb() {
+        numbers = [] ;
+        value = document.getElementById("val").value;
+        var inputs=document.getElementsByName("number5");
+        console.log(inputs) ;  
+        for (var i = 0; i < inputs.length; i++) {
+            console.log(i) ;  
+            console.log(inputs[i].value) ;  
+            numbers[i]=inputs[i].value; 
+        }
+        ss(numbers);
+    }
+
+    function reset(){
+        var div1 = document.getElementById('number1');
+        var div2 = document.getElementById('sim');
+        while(div1.firstChild){
+            div1.removeChild(div1.firstChild);
+        }
+        while(div2.firstChild){
+            div2.removeChild(div2.firstChild);
+        }
+        document.getElementById("enterval").style.display = "block";
+    }
+</script>
+
+
+</html>
